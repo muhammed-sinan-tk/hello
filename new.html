@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="kooi.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="color_black">
+            <div class="hetol">
+                <h3>HOTEL KERALA</h3>
+            </div>
+            <div class="min" id="section1">
+                <button>Coffee</button>
+                <button>1</button>
+                <input type="text" class="price" placeholder="0">
+            </div>
+            <div class="min" id="section2">
+                <button>Lime</button>
+                <button>1</button>
+                <input type="text" class="price" placeholder="0">
+            </div>
+            <div class="min" id="section3">
+                <button>Tea</button>
+                <button>1</button>
+                <input type="text" class="price" placeholder="0">
+            </div>
+            <br>
+            <div class="click">
+                <button onclick="calculateTotal()">click</button>
+            </div>
+            <div class="total">Total :<span id="total">0</span></div>
+        </div>
+       
+    </div>
+
+    <script>
+        function calculateTotal() {
+            let total = 0;
+
+            // Loop through each section
+            for (let i = 1; i <= 3; i++) {
+                let price = parseFloat(document.getElementById("section" + i).getElementsByClassName("price")[0].value) || 0;
+                total += price;
+            }
+
+            document.getElementById("total").innerText = total.toFixed(2);
+        }
+    </script>
+
+</body>
+
+</html>
